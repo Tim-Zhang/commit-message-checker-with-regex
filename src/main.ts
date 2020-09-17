@@ -39,6 +39,7 @@ async function run(): Promise<void> {
 
     for (const {commit, sha} of commits) {
       inputHelper.checkArgs(checkerArguments)
+      console.log("message: ", commit.message);
       let errMsg = commitMessageChecker.checkCommitMessages(checkerArguments, commit.message)
 
       if (errMsg) {
